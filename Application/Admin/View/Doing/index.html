@@ -1,0 +1,29 @@
+<include file="Public/header" />
+<div class="col-lg-12 col-sm-12 row">
+<a href="{:U('admin/doing/add')}">新增</a>
+<table class = 'table'>
+	<tr>
+		<th>ID</th>
+		<th>文章</th>
+		<th>图片地址</th>
+		<th>图片</th>
+		<th>创建时间</th>
+		<th>更新时间</th>
+		<th>操作</th>
+	</tr>
+	<foreach name = 'list' item = "vo">
+	<tr>
+		<td>{$vo.id}</td>
+		<td>{$vo.content|mb_substr=0,10,utf8}</td>
+		<td>{$vo.pic}</td>
+		<td><img src="__PUBLIC__/uploads/{$vo.pic}" alt="" width="100px" height="100px"></td>
+		<td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+		<td>{$vo.update_time|date='Y-m-d H:i:s',###}</td>
+		<td><a href="{:U('admin/doing/update',array('id'=>$vo['id']))}">修改</a>/<a href="{:U('admin/doing/delete',array('id'=>$vo['id']))}">删除</a></td>
+	</tr>
+	</foreach>
+</table>
+<div class="page">{$page}</div>
+</div>
+<include file="Public/footer" />
+

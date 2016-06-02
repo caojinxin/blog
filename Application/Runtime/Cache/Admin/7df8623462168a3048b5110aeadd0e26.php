@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <!--
@@ -22,19 +22,19 @@
     <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
-    <link id="bs-css" href="__PUBLIC__/admin/css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link id="bs-css" href="/Public/admin/css/bootstrap-cerulean.min.css" rel="stylesheet">
 
-    <link href="__PUBLIC__/admin/css/charisma-app.css" rel="stylesheet">
-    <link href='__PUBLIC__/admin/css/jquery.noty.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/noty_theme_default.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/elfinder.min.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/elfinder.theme.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/jquery.iphone.toggle.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/uploadify.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/animate.min.css' rel='stylesheet'>
+    <link href="/Public/admin/css/charisma-app.css" rel="stylesheet">
+    <link href='/Public/admin/css/jquery.noty.css' rel='stylesheet'>
+    <link href='/Public/admin/css/noty_theme_default.css' rel='stylesheet'>
+    <link href='/Public/admin/css/elfinder.min.css' rel='stylesheet'>
+    <link href='/Public/admin/css/elfinder.theme.css' rel='stylesheet'>
+    <link href='/Public/admin/css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='/Public/admin/css/uploadify.css' rel='stylesheet'>
+    <link href='/Public/admin/css/animate.min.css' rel='stylesheet'>
 
     <!-- jQuery -->
-    <script src="__PUBLIC__/admin/js/jquery.js"></script>
+    <script src="/Public/admin/js/jquery.js"></script>
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -57,7 +57,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"> <img alt="Charisma Logo" src="__PUBLIC__/admin/images/logo20.png" class="hidden-xs"/>
+            <a class="navbar-brand" href="index.html"> <img alt="Charisma Logo" src="/Public/admin/images/logo20.png" class="hidden-xs"/>
                 <span>Charisma</span></a>
 
             <!-- user dropdown starts -->
@@ -133,13 +133,13 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="{:U('admin/blog/index')}"><i class="glyphicon glyphicon-home"></i><span> 用户管理</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i class="glyphicon glyphicon-home"></i><span> 用户管理</span></a>
                         </li>
-                        <li><a class="ajax-link" href="{:U('admin/image/index')}"><i class="glyphicon glyphicon-eye-open"></i><span> 图片管理</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/image/index');?>"><i class="glyphicon glyphicon-eye-open"></i><span> 图片管理</span></a>
                         </li>
-                        <li><a class="ajax-link" href="{:U('admin/blog/index')}"><i
+                        <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i
                                     class="glyphicon glyphicon-edit"></i><span> Blogs</span></a></li>
-                        <li><a class="ajax-link" href="{:U('admin/categroy/index')}"><i class="glyphicon glyphicon-list-alt"></i><span> Categroy</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/categroy/index');?>"><i class="glyphicon glyphicon-list-alt"></i><span> Categroy</span></a>
                         </li>
                         <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
                         </li>
@@ -195,3 +195,45 @@
                     </li>
                 </ul>
             </div>
+<!-- *********内容************* -->
+<div style="width:500px">
+    <form class="form-horizontal" action="<?php echo U('admin/categroy/handleUpdate');?>" method="post"
+    enctype='multipart/form-data'>
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">级别：</label>
+        <div class="col-sm-10">
+          <select name='parent_id' id='parent_id'>
+                <option value='0'>顶级分类</option>
+            <?php if(is_array($list)): foreach($list as $k=>$vo): ?><option value='<?php echo ($vo["id"]); ?>'  <?php if($vo['id'] == $categroy['parent_id']) {echo 'selected';} ?>><?php echo ($vo["name"]); ?></option><?php endforeach; endif; ?>
+          </select> 
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">分类：</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPassword3" placeholder="分类" name="name" value='<?php echo ($categroy["name"]); ?>'>
+        </div>
+      </div>
+      <input type='hidden' name='id' value='<?php echo ($categroy["id"]); ?>'>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">提交</button>
+        </div>
+      </div>
+    </form>
+</div>
+<!-- *********内容************* -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+<footer class="row">
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
+                Usman</a> 2012 - 2015</p>
+
+        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+    </footer>
+
+</div><!--/.fluid-container-->
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <!--
@@ -22,19 +22,19 @@
     <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
-    <link id="bs-css" href="__PUBLIC__/admin/css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link id="bs-css" href="/Public/admin/css/bootstrap-cerulean.min.css" rel="stylesheet">
 
-    <link href="__PUBLIC__/admin/css/charisma-app.css" rel="stylesheet">
-    <link href='__PUBLIC__/admin/css/jquery.noty.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/noty_theme_default.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/elfinder.min.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/elfinder.theme.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/jquery.iphone.toggle.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/uploadify.css' rel='stylesheet'>
-    <link href='__PUBLIC__/admin/css/animate.min.css' rel='stylesheet'>
+    <link href="/Public/admin/css/charisma-app.css" rel="stylesheet">
+    <link href='/Public/admin/css/jquery.noty.css' rel='stylesheet'>
+    <link href='/Public/admin/css/noty_theme_default.css' rel='stylesheet'>
+    <link href='/Public/admin/css/elfinder.min.css' rel='stylesheet'>
+    <link href='/Public/admin/css/elfinder.theme.css' rel='stylesheet'>
+    <link href='/Public/admin/css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='/Public/admin/css/uploadify.css' rel='stylesheet'>
+    <link href='/Public/admin/css/animate.min.css' rel='stylesheet'>
 
     <!-- jQuery -->
-    <script src="__PUBLIC__/admin/js/jquery.js"></script>
+    <script src="/Public/admin/js/jquery.js"></script>
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -57,7 +57,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"> <img alt="Charisma Logo" src="__PUBLIC__/admin/images/logo20.png" class="hidden-xs"/>
+            <a class="navbar-brand" href="index.html"> <img alt="Charisma Logo" src="/Public/admin/images/logo20.png" class="hidden-xs"/>
                 <span>Charisma</span></a>
 
             <!-- user dropdown starts -->
@@ -133,13 +133,13 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="{:U('admin/blog/index')}"><i class="glyphicon glyphicon-home"></i><span> 用户管理</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i class="glyphicon glyphicon-home"></i><span> 博客管理</span></a>
                         </li>
-                        <li><a class="ajax-link" href="{:U('admin/image/index')}"><i class="glyphicon glyphicon-eye-open"></i><span> 图片管理</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/image/index');?>"><i class="glyphicon glyphicon-eye-open"></i><span> 图片管理</span></a>
                         </li>
-                        <li><a class="ajax-link" href="{:U('admin/blog/index')}"><i
-                                    class="glyphicon glyphicon-edit"></i><span> Blogs</span></a></li>
-                        <li><a class="ajax-link" href="{:U('admin/categroy/index')}"><i class="glyphicon glyphicon-list-alt"></i><span> Categroy</span></a>
+                        <li><a class="ajax-link" href="form.html"><i
+                                    class="glyphicon glyphicon-edit"></i><span> Forms</span></a></li>
+                        <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span> Charts</span></a>
                         </li>
                         <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
                         </li>
@@ -195,3 +195,77 @@
                     </li>
                 </ul>
             </div>
+<!-- *********内容************* -->
+<div style="width:500px">
+    <form class="form-horizontal" action="<?php echo U('admin/blog/handleUpdate');?>" method="post"
+    enctype='multipart/form-data'>
+	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-2 control-label">标题：</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="inputEmail3" placeholder="标题" name="title" value='<?php echo ($blog["title"]); ?>'>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">内容：</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="内容" name="content" value='<?php echo ($blog["content"]); ?>'>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
+	    <div class="col-sm-10">
+	     <img src='/Public/<?php echo ($blog["pic"]); ?>' alt='' width='150px' height='150px'>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
+	    <div class="col-sm-10">
+	      <input type="file" class="form-control" id="inputPassword3" placeholder="图片" name="pic">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">作者：</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="作者" name="author" value='<?php echo ($blog["author"]); ?>'>
+	    </div>
+	  </div>
+	   <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">浏览次数：</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="浏览次数" name="read_num" value='<?php echo ($blog["read_num"]); ?>'>
+	    </div>
+	  </div>
+	   <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">描述：</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="描述" name="description" value='<?php echo ($blog["description"]); ?>'>
+	    </div>
+	  </div>
+	   <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">分类id：</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="分类id" name="category_id" value='<?php echo ($blog["category_id"]); ?>'>
+	    </div>
+	  </div>
+	  <input type='hidden' name='id' value='<?php echo ($blog["id"]); ?>'>
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-default">修改</button>
+	    </div>
+	  </div>
+	</form>
+</div>
+<!-- *********内容************* -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+<footer class="row">
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
+                Usman</a> 2012 - 2015</p>
+
+        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
+                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
+    </footer>
+
+</div><!--/.fluid-container-->
+</body>
+</html>

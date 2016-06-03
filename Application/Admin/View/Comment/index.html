@@ -1,0 +1,43 @@
+<include file="Public/header" />
+<div class=" row">
+    <div class="col-md-12 col-sm-12 col-xs-6">
+        <p style="font-size:100px;">留言中心 </p>
+       <table class='table table-bordered'>
+            <tr>
+                <td>Id</td>
+                <td>user_id</td>
+                <td>blog_id</td>
+                <td>内容</td>
+                <td>顶</td>  
+                <td>状态</td>           
+                <td>创建时间</td>  
+                <td>操作</td>
+            </tr>
+            <foreach name='list' item='vo' key='k'>
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.user_id}</td>
+                    <td>{$vo.blog_id}</td>
+                    <td>{$vo.top}</td>
+                    <td>{$vo.content}</td>
+                    <td>{$vo.is_del}</td>
+                    <td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+                    <td>
+                        <a href="{:U('admin/comment/del',array('id'=>$vo['id']))}">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+       </table>
+       <style type="text/css">
+            .page .current{background-color:rgba(0,255,150,0.5);}
+            .page .prev,.num,.next,.current{width:auto;height:auto;margin:4px;padding:3px 3px;box-shadow:0 0 2px rgba(0,0,0,0.2);background-color:rgba(255,255,255,0.1);}
+       </style>
+       <div class='page'>{$page}</div>
+    </div>
+</div>
+<!-- <script type="text/javascript">
+    $(function(){
+        $('.page').find('div').children().addClass('btn btn-default');
+    })
+</script> -->
+<include file="Public/footer" />

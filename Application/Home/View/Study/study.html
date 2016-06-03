@@ -1,0 +1,80 @@
+<include file='Public/header' />
+		<div class="container clearfix">
+			<h1>
+				<a href="{:U('home/index/index')}" class="n1">网站首页</a>
+				<a href="{$bar.url}" class="n2">{$bar.name}</a>
+				<span class="fr">我们长路漫漫，只因学无止境。</span>
+			</h1>
+			<div class="container-left fl clearfix">
+			   <foreach name='list' item='v' key='k'>
+			   <div class="container-left-left clearfix">
+			   		<h2>
+						<a href="">{$v.title}</a>
+					</h2>
+					<p>
+						<span>发布时间：{$v.create_time|date='Y-m-d H:i:s',###}</span>
+						<span>作者：{$v.author}</span>
+						<span>
+						<a href="">{$categroy[$v['categroy_id']]['name']}</a>
+						</span>
+					</p>
+					<figure class="fl">
+						<a href=""title="IP要突破2000+了">
+							<img src="__PUBLIC__/{$v.pic}">
+						</a>
+					</figure>
+					<div class="container-left-right fl">
+						<p>
+							{$v.content|htmlspecialchars_decode}
+						</p>
+						<a href="{:U('home/study/detail',array('id'=>$v['categroy_id']))}">
+							详细信息>>
+						</a>
+					</div>
+					<div class="line fl"></div>
+			   </div>
+			   </foreach>
+			   <div class='page'>
+			   		{$page}
+				</div>
+			</div>
+			<div class="content_r fl">
+				<form>
+					<input type="text" value="请输入关键字"class="input">	
+					<button>搜索</button>
+				</form>
+				<div class="nav">
+					<ul>
+						<foreach name='categroy' item='value'>
+							<?php if($value['parent_id'] == 5){ ?>
+							<li class="nav1">
+								<a href="{:U('home/study/study',array('categroy_id'=>$value['id']))}">{$value.name}</a>
+							</li>
+							<?php continue; ?>
+						<?php } ?>					
+						</foreach>					
+					</ul>
+				</div>
+				<h4 class="right-top"><p>最新<span>文章</span></p></h4>
+				<ul class="news news1">
+					<foreach name='info1' item='vo'>
+						<li><a href="">{$vo.title}</a></li>
+					</foreach>
+				</ul>
+				<h4><p>模板<span>排行</span></p></h4>
+				<ul class="news news2">
+					<foreach name='info' item='vo'>
+						<li><a href="">{$vo.title}</a></li>
+					</foreach>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="footer conmwidth">
+			<div class="footer_mid conmwidth_10">
+				<span class="footer_info">Design by DanceSmile</span>
+				<a class="footer_a" href="">蜀ICP备11002373号-1</a>
+			</div>
+		</div>
+	</body>
+</html>

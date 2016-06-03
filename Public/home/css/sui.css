@@ -1,0 +1,104 @@
+/*信息列表*/
+.dateview {
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 1000px;
+	background: url(../img/r_title_bg.jpg) 760px center repeat-y;
+}
+.dateview li {
+	margin-bottom: 20px;
+}
+.dataciew_list {
+	position: relative;
+	padding: 20px 30px 20px 40px;
+	width: 660px;
+	background-color: rgba(244,242,242,0.6);
+	border-radius: 3px;
+}
+.dataciew_list_bg {
+	background-color: rgba(244,242,242,1);
+}
+.circle {
+	position: absolute;
+	right: -39px;
+	top: 30px;
+	width: 10px;
+	height: 10px;
+	border: 3px solid #fff;
+	border-radius: 100%;
+	background-color: #999;
+}
+.circle_green {
+	background-color: rgba(94,165,27,1);
+}
+.dataciew_list::before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 0px 0 20px 22px;
+	border-color: transparent transparent transparent #fff;
+	position: absolute;
+	left: 730px;
+	top: 23px;
+	/*opacity: 0;*/
+}
+.dataciew_list:hover::before {
+	border-color: transparent transparent transparent rgb(206,204,205);
+}
+/*.triangle {
+	position: absolute;
+	left: 730px;
+	top: 23px;
+	width: 20px;
+	height: 20px;
+	opacity: 0;
+	border-width: 0px 0 20px 22px;
+  	border-color: transparent transparent transparent #666;
+}*/
+.dataciew_list_text {
+	line-height: 22px;
+}
+.dataciew_list_text img {
+	margin-right: 10px;
+	width: 150px;
+	height: 120px;
+}
+.note {
+	position: absolute;
+	right: -185px;
+	top: 30px;
+	width: 126px;
+	height: 30px;
+	line-height: 30px;
+	background-color: rgba(94,165,27,1);
+	border-top-right-radius: 75px;
+	border-bottom-left-radius: 75px;
+	color: #fff;
+	text-align: center;
+}
+.note_font {
+	font-weight: bold;
+}
+
+/*分页*/
+.page {
+	margin-top: 20px;
+	text-align: center;
+}
+.page a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 100%;
+	border: 1px solid #999;
+	color: red;
+}
+.page a:hover {
+	background-color: #999;
+}
+.page .first {
+	color: #666;
+	font-weight: bold;
+}

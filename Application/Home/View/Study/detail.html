@@ -1,0 +1,247 @@
+<include file='Public/header' />
+		<div class="study_container clearfix">
+			<h1>
+				<a href="" class="n1">网站首页</a>
+				<a href="" class="n2">学无止境</a>
+				<span class="fr">我们长路漫漫，只因学无止境。</span>
+			</h1>
+			<div class="container-left fl clearfix">
+			   <h2 class="c-title">帝国cms首页、自定义页面如何实现分页</h2>
+			   <p class="c-box">
+			   	  <span class="d_time">发布时间：2015-07-03</span>
+			   	  <span>
+			   	  	编辑：
+			   	  	<a href="">杨青</a>
+			   	  </span>
+			   	  <span>
+			   	  	阅读（13792）
+			   	  </span>
+			   </p>
+			   <div class="c-info">
+				   	<p>
+				   		帝国cms首页以及自定义页面如何实现分页，添加如下js代码即可
+				   	</p>
+				   	<p>
+				   		<img src="__PUBLIC__/home/img/daima.png">
+				   	</p>
+				   	<div class="shili">
+					<p>1、添加代码：</p>
+					<p>&lt;!doctype html&gt;</p>
+					<p>&lt;html&gt;</p>
+					<p>&lt;head&gt;</p>
+					<p>&lt;meta charset="gb2312"&gt;</p>
+					<p>&lt;title&gt;www.yangqq.com&lt;/title&gt;</p>
+					<p>&lt;meta name="keywords" content="" /&gt;</p>
+					<p>&lt;meta name="description" content="" /&gt;</p>
+					<p><span style="color: rgb(255, 0, 0);">&lt;script src="page.js"&gt;&lt;/script&gt;</span></p>
+					<p>&lt;/head&gt;</p>
+					<p>&lt;body&gt;</p>
+					<p><span style="color: rgb(255, 0, 0);">&lt;ul id="list" style="display:none;"&gt;</span></p>
+					<p><span style="color: rgb(255, 0, 0);">[e:loop={'selfinfo',10,0,0}]</span></p>
+					<p><span style="color: rgb(255, 0, 0);">&lt;li&gt;&lt;a href="&lt;?=$bqsr[titleurl]?&gt;" title="&lt;?=$bqr[title]?&gt;" &gt;&lt;/li&gt;&nbsp;</span></p>
+					<p><span style="color: rgb(255, 0, 0);">[/e:loop]</span></p>
+					<p><span style="color: rgb(255, 0, 0);">&lt;/ul&gt;</span></p>
+					<p><span style="color: rgb(255, 0, 0);">&lt;ul id="list2"&gt;&lt;/ul&gt;&lt;script src="page2.js"&gt;&lt;/script&gt;</span></p>
+					<p>&lt;/body&gt;</p>
+					<p>&lt;/html&gt;</p>
+					</div>
+				   <p>
+					    2、
+						<a href="">下载JS</a>
+				   </p>
+			   </div>
+			   <div class="key">
+			   		<p>
+			   			<span>关键字</span>:帝国cms,首页,自定义页面,分页
+			   		</p>
+			   </div>
+				<div class="nextinfo">
+					<p>
+						上一篇:<a href="">【已评选】给我模板PSD源文件，我给你设计HTML！</a>
+					</p>
+					<p>
+						下一篇:<a href="">返回列表</a>
+					</p>
+				</div>
+				<div class="otherlink">
+					<h2>相关文章</h2>
+					<ul class="clearfix">
+						<li>
+							<a href="">帝国cms常用标签调用方法总结（不得不收藏哦）</a>
+						</li>
+						<li>
+							<a href="">帝国cms怎样修改列表分页函数</a>
+						</li>
+					</ul>
+				</div>
+			   <div class="page">
+					<a class="first" href="">168</a>
+					<a href="">1</a>
+					<a href="">2</a>
+					<a href="">3</a>
+					<a href="">4</a>
+					<a href="">></a>
+					<a href="">>></a>
+			   </div>
+			   <div class="content floatl">
+					<ul class="content_ul_top clearfix">
+						<li class="fontsizemiddle"><p class="top_command">被顶起来的评论</p></li>
+						<li class="">
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/2.jpg"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/3.jpg" width="50" height="50"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/4.jpg" width="50" height="50"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+					</ul>
+					<div class="content_middle clearfix">
+						<ul class="floatl clearfix">
+							<li class="p_middle_lifirst"><a href=""><span>636</span>条评论</a></li>
+							<li><a href=""><span>10</span>条新浪微博</a></li>
+							<li><a href=""><span>6</span>条新浪微博</a></li>
+						</ul>
+						<ul class="floatr clearfix">
+							<li><span><a href="">最新</a></span></li>
+							<li><a href="">最早</a></li>
+							<li><a href="">最热</a></li>
+						</ul>
+					</div>
+					<ul class="content_ul_center">
+						<li class="">
+							<p class="floatl"><img src="__PUBLIC__/home/img/2.jpg"></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/5.jpg" width="50" height="50"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/4.jpg" width="50" height="50"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/2.jpg" width="50" height="50"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/6.jpg" width="50" height="50"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/2.jpg" width="50" height="50"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+						<li>
+							<p class="floatl"><a href=""><img src="__PUBLIC__/home/img/7.jpg" width="30" height="30"></a></p>
+							<p class="fontsizesmall">yanbh</p>
+							<p>用你的模板创建了一个博客,yanhua.com</p>
+							<p class="fontsizesmall"><span>2月24日</span> <span>回复</span> <span>顶</span> <span>转发</span></p>
+						</li>
+					</ul>
+					<div class="content_bottom">
+						<ul class="floatr clearfix">
+							<li><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li class="dian">...........</li>
+							<li><a href="">102</a></li>
+						</ul>
+					</div>
+					<ul class="share clearfix">
+						<li>社交登录账号：</li>
+						<li><a href="">微信</a></li>
+						<li><a href="">微博</a></li>
+						<li><a href="">QQ</a></li>
+						<li><a href="">人人</a></li>
+						<li><a href="">更多》</a></li>
+					</ul>
+					<div class="toursaid">
+						<a href=""><img src="__PUBLIC__/home/img/2.jpg"></a>
+						<input type="text" value="">
+						<p class="anounce"><img src="__PUBLIC__/home/img/emotion.jpg"><span class="floatr"><a href="">发布</a></span></p>
+						<p class="floatr fontsizesmall">杨青个人微博网站正在使用多说</p>	
+					</div>
+			   </div>
+			</div>
+			<div class="content_r fl">
+				<form>
+					<input type="text" value="请输入关键字"class="input">	
+					<button>搜索</button>
+				</form>
+				<div class="nav">
+					<ul>
+						<li class="nav1">
+							<a href="">心得笔记</a>
+						</li>
+						<li class="nav2">
+							<a href="">IP查询</a>
+						</li>
+						<li class="nav3">
+							<a href="">CSS3|Html5</a>
+						</li>
+						<li class="nav4">
+							<a href="">网站建设</a>
+						</li>
+						<li class="nav4">
+							<a href="">JS经典实例</a>
+						</li>
+						<li class="nav4">
+							<a href="">推荐工具</a>
+						</li>
+					</ul>
+				</div>
+				<h4 class="right-top"><p>最新<span>文章</span></p></h4>
+				<ul class="news news1">
+					<li><a href="">帝国cms首页、自定义页面如何实现分页</a></li>
+					<li><a href="">2014年度优秀个人博客排名公布</a></li>
+					<li><a href="">帝国cms首页、自定义页面如何实现分页</a></li>
+					<li><a href="">帝国cms首页、自定义页面如何实现分页</a></li>
+					<li><a href="">2014年度优秀个人博客排名公布</a></li>
+					<li><a href="">帝国cms首页、实现分页</a></li>
+				</ul>
+				<h4><p>模板<span>排行</span></p></h4>
+				<ul class="news news2">
+					<li><a href="">帝国cms首页、自定义页面如何实现分页</a></li>
+					<li><a href="">2014年度优秀个人博客排名公布</a></li>
+					<li><a href="">帝国cms首页、自定义页面如何实现分页</a></li>
+					<li><a href="">帝国cms首页、自定义页面如何实现分页</a></li>
+					<li><a href="">2014年度优秀个人博客排名公布</a></li>
+					<li><a href="">帝国cms首页、实现分页</a></li>
+					<li><a href="">帝国cms首页、实现分页</a></li>
+					<li><a href="">帝国cms首页、实现分页</a></li>
+					<li><a href="">帝国cms首页、实现分页</a></li>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="footer conmwidth">
+			<div class="footer_mid conmwidth_10">
+				<span class="footer_info">Design by DanceSmile</span>
+				<a class="footer_a" href="">蜀ICP备11002373号-1</a>
+			</div>
+		</div>
+	</body>
+</html>

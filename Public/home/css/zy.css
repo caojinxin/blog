@@ -1,0 +1,272 @@
+/*背景部分*/
+.banner {
+	background: url(../img/banner_top.jpg) center center no-repeat; 
+	height: 265px;
+}
+.box_text {
+	margin-top: 60px;
+	margin-left: 70px;
+}
+.box_text {
+	line-height: 25px;
+	font-size: 15px;
+	color: #666;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8), 2px 2px 3px rgba(180, 151, 151, 0.3);
+}
+.box_img {
+	margin-top: 40px;
+	margin-right: 30px;
+}
+.box_img img {
+	border: 3px solid #fff;
+	border-radius: 100%;
+}
+/*文本部分*/
+.bg {
+	background: url(../img/h_line.jpg) repeat-x 20px center;
+	z-index: 1;
+	/*margin-bottom: 20px;*/
+} 
+.bg h3 {
+	display: inline-block;
+	width: 90px;
+	z-index: 10;
+	background-color: #fff;
+}
+.content_l {
+	padding-left: 5px; 
+	padding-right: 15px;
+	width: 710px;
+	background: url(../img/r_line.jpg) repeat-y right 20px;
+}
+.list {
+	margin-top: 10px;
+}
+.mid {
+	margin-bottom: 10px;	
+}
+.mid img {
+	border: 1px solid #ccc;
+}
+.content_l h5 {
+	text-indent: 5px;
+	line-height: 30px;
+}
+.right_describe {
+	width: 500px;
+	font-size: 13px;
+	color: #999;
+}
+.info {
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	text-indent: 20px; 	
+	background: #f6f6f6 url(../img/time.jpg) 5px center no-repeat;
+	font-size: 12px;
+}
+.info span {
+	padding: 0 5px;
+}
+.info span a {
+	color: green;
+}
+.whole {
+	margin: 10px 10px 10px 0;
+	float: right;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	background-color: rgb(253,138,97);
+}
+.whole a {
+	font-size: 13px;
+	color: #fff;
+	line-height: 30px;
+}
+
+
+/*右侧菜单*/
+.content_r {
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 250px;
+	margin-top: 20px;
+	text-align: center;	
+}
+.content_r h4 {
+
+	margin-bottom: 10px;
+	margin-top: 20px;
+	text-align: left;
+	background: url(../img/r_title_bg.jpg)repeat-x center;
+}
+.content_r h4 p {
+	display: inline-block;
+	background-color: #fff;
+	width: 70px;
+}
+.content_r h4 p span {
+	color: green;
+}
+.news {
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 12px;
+	color: #000;
+}
+.news li {
+	text-indent: 8px;
+	line-height: 31px;
+}
+.news2 li {
+	text-indent: 23px;
+	line-height: 30px;
+	border-bottom: 1px dotted #ccc;
+}
+.news1 li {
+	background: url(../img/li.jpg)no-repeat left center;
+}
+.news li a {
+	color: #000;
+}
+.news li a:hover {
+	text-decoration: underline;
+}
+.news2 {
+	background: url(../img/ph.jpg)no-repeat left 8px;
+}
+.website {
+	margin: 10px 0;
+	background: #F3F3F3;
+	border-radius: 50%;
+	text-align: center;
+}
+.website a {
+	font-size: 12px;
+	line-height: 24px;	
+	color: #000;
+}
+.icon {
+	position: relative;
+	margin: 20px 0;
+} 
+.icon>a {
+	margin-right: 7px;
+	float: left;
+	width: 32px;
+	height: 32px;
+	background-image: url(../img/icons_1_32.png);
+}
+
+.share {
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	width: 230px;
+	text-align: left;
+}
+.share_c {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 5px;
+	background-color: #f6f6f6;
+}
+.list_info {
+	margin: 0 auto;
+	width: 100%;
+	background-color: #fff;
+}
+.list_info li {
+	margin: 5px 5px;
+	float: left;
+	width: 100px;
+	line-height: 30px;
+	font-size: 12px;
+	text-indent: 7px;
+}
+.list_info a {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	text-align: left;
+	border-radius: 3px;
+}
+.list_info a:hover {
+	background-color: #ccc;
+}
+.list_info a span {
+	display: inline-block;
+	margin-right: 3px;
+	width: 15px;
+	height: 15px;
+	vertical-align: -2px;
+	background-image: url(../img/icons_1_32.png);
+	background-repeat: no-repeat;
+	background-size: 15px;
+}
+.list_info_1 {
+	background-position: 0 0;
+}
+.list_info_2 {
+	background-position: 0 -24px;
+}
+.list_info_3 {
+	background-position: 0 -49px;
+}
+.list_info_4 {
+	background-position: 0 -74px;
+}
+.more_more {
+	margin-right: 15px;
+	font-size: 13px;
+	color: #999;
+}
+.more_more span {
+	display: inline-block;
+	margin-right: 3px;
+	width: 15px;
+	height: 15px;
+	vertical-align: -2px;
+	background-image: url(../img/icons_1_32.png);
+	background-repeat: no-repeat;
+	background-size: 15px;
+}
+
+
+.bds_more {
+	position: relative;
+}
+.bds_qzone {
+	background-position: 0 -52px;
+}
+.bds_tsina {
+	background-position: 0 -104px;
+}
+.bds_tqq {
+	background-position: 0 -260px;
+}
+.bds_renren {
+	background-position: 0 -208px;
+}
+.bds_weixin {
+	background-position: 0 -1612px;
+}
+.prompt {
+	margin: 10px 0;
+	font-size: 13px;
+	text-align: left;
+}
+.prompt span {
+	color: green;
+	font-size: 16px;
+}
+
+
+
+
+
+
+
+

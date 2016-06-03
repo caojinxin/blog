@@ -2,7 +2,33 @@
 namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
+	public $detail_url = array(
+		1 => array('controller'=>'Manlife','method'=>'detail'),
+		5 => array('controller'=>'Study','method'=>'detail'),
+		);
     public function index(){
-        $this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>版本 V{$Think.version}</div><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_55e75dfae343f5a1"></thinkad><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
+    	$blog = M('Blog'); // 实例化User对象
+    
+    	$count = $blog->where($where)->count();// 查询满足要求的总记录数
+    	$Page = new \Think\Page($count,3);
+    	//实例化分页类 传入总记录数和每页显示的记录数(2)
+    	$Page->setConfig('prev','<<');
+    	$Page->setConfig('next','>>');
+    	$Page->setConfig('header',"<span class='rows'>共 %TOTAL_ROW% 博客</span>");
+    	$Page->setConfig('theme',"%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%");
+    	$show = $Page->show();// 分页显示输出
+    	// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+    	$blog_list = $blog->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+        $list = $blog->order('create_time desc')->select();
+        $this->assign('info',$list);
+    	$this->assign('detail_url',$this->detail_url);
+    	$this->assign('list',$blog_list);
+    	$this->assign('page',$show);
+    	$this->display();
     }
 }
+
+
+
+?>
+

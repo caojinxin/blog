@@ -20,7 +20,7 @@
                 <tr>
                     <td>{$vo.id}</td>
                     <td>{$vo.title}</td>
-                    <td>{$vo.content}</td>
+                    <td>{$vo.content|htmlspecialchars_decode}</td>
                     <td><img src="__PUBLIC__/{$vo.pic}" alt='' width='100px' height='40px'></td>
                     <td>{$vo.author}</td>
                     <td>{$vo.description}</td>

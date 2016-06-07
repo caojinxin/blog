@@ -43,12 +43,6 @@
 
     <!-- The fav icon -->
     <link rel="shortcut icon" href="img/favicon.ico">
-    
-    <link href="/Public/vendor/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="/Public/vendor/umeditor/third-party/jquery.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/Public/vendor/umeditor/umeditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/Public/vendor/umeditor/umeditor.min.js"></script>
-    <script type="text/javascript" src="/Public/vendor/umeditor/lang/zh-cn/zh-cn.js"></script>
 
 </head>
 
@@ -196,67 +190,12 @@
                     </li>
                 </ul>
             </div>
-<!-- *********内容************* -->
-<div style="width:500px">
-    <form class="form-horizontal" action="<?php echo U('admin/blog/handleUpdate');?>" method="post"
-    enctype='multipart/form-data'>
-	  <div class="form-group">
-	    <label for="inputEmail3" class="col-sm-2 control-label">标题：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputEmail3" placeholder="标题" name="title" value='<?php echo ($blog["title"]); ?>'>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">内容：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="内容" name="content" value='<?php echo ($blog["content"]); ?>'>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
-	    <div class="col-sm-10">
-	     <img src='/Public/<?php echo ($blog["pic"]); ?>' alt='' width='150px' height='150px'>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
-	    <div class="col-sm-10">
-	      <input type="file" class="form-control" id="inputPassword3" placeholder="图片" name="pic">
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">作者：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="作者" name="author" value='<?php echo ($blog["author"]); ?>'>
-	    </div>
-	  </div>
-	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">浏览次数：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="浏览次数" name="read_num" value='<?php echo ($blog["read_num"]); ?>'>
-	    </div>
-	  </div>
-	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">描述：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="描述" name="description" value='<?php echo ($blog["description"]); ?>'>
-	    </div>
-	  </div>
-	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">分类id：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="分类id" name="categroy_id" value='<?php echo ($blog["category_id"]); ?>'>
-	    </div>
-	  </div>
-	  <input type='hidden' name='id' value='<?php echo ($blog["id"]); ?>'>
-	  <div class="form-group">
-	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">修改</button>
-	    </div>
-	  </div>
-	</form>
-</div>
-<!-- *********内容************* -->
+<div class="col-lg-12 col-sm-12 row">
+<form action = '<?php echo U('admin/doing/handleadd');?>' method = 'post' enctype="multipart/form-data">
+	<input type = 'file' name = 'pic'><br>
+	<textarea name = 'content'></textarea><br>
+	<input type = 'submit' >
+</form>
     </div><!--/#content.col-md-0-->
 </div><!--/fluid-row-->
 <footer class="row">

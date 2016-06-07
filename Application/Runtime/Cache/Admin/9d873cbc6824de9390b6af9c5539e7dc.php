@@ -144,7 +144,7 @@
                         </li>
                         <li><a class="ajax-link" href="<?php echo U('admin/doing/index');?>"><i class="glyphicon glyphicon-font"></i><span> 碎言碎语</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Gallery</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/about/update');?>"><i class="glyphicon glyphicon-picture"></i><span> About</span></a>
                         </li>
                         <li class="nav-header hidden-md">Sample Section</li>
                         <li><a class="ajax-link" href="table.html"><i
@@ -160,7 +160,7 @@
                         </li>
                         <li><a class="ajax-link" href="grid.html"><i
                                     class="glyphicon glyphicon-th"></i><span> Grid</span></a></li>
-                        <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Tour</span></a></li>
+                        <li><a href="<?php echo U('admin/comment/index');?>"><i class="glyphicon glyphicon-globe"></i><span> Comment</span></a></li>
                         <li><a class="ajax-link" href="icon.html"><i
                                     class="glyphicon glyphicon-star"></i><span> Icons</span></a></li>
                         <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
@@ -196,67 +196,30 @@
                     </li>
                 </ul>
             </div>
-<!-- *********内容************* -->
-<div style="width:500px">
-    <form class="form-horizontal" action="<?php echo U('admin/blog/handleUpdate');?>" method="post"
-    enctype='multipart/form-data'>
-	  <div class="form-group">
-	    <label for="inputEmail3" class="col-sm-2 control-label">标题：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputEmail3" placeholder="标题" name="title" value='<?php echo ($blog["title"]); ?>'>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">内容：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="内容" name="content" value='<?php echo ($blog["content"]); ?>'>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
-	    <div class="col-sm-10">
-	     <img src='/Public/<?php echo ($blog["pic"]); ?>' alt='' width='150px' height='150px'>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
-	    <div class="col-sm-10">
-	      <input type="file" class="form-control" id="inputPassword3" placeholder="图片" name="pic">
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">作者：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="作者" name="author" value='<?php echo ($blog["author"]); ?>'>
-	    </div>
-	  </div>
-	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">浏览次数：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="浏览次数" name="read_num" value='<?php echo ($blog["read_num"]); ?>'>
-	    </div>
-	  </div>
-	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">描述：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="描述" name="description" value='<?php echo ($blog["description"]); ?>'>
-	    </div>
-	  </div>
-	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">分类id：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="分类id" name="categroy_id" value='<?php echo ($blog["category_id"]); ?>'>
-	    </div>
-	  </div>
-	  <input type='hidden' name='id' value='<?php echo ($blog["id"]); ?>'>
-	  <div class="form-group">
-	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">修改</button>
-	    </div>
-	  </div>
-	</form>
+<div class="col-lg-12 col-sm-12 row">
+<a href="<?php echo U('admin/doing/add');?>">新增</a>
+<table class = 'table'>
+	<tr>
+		<th>ID</th>
+		<th>文章</th>
+		<th>图片地址</th>
+		<th>图片</th>
+		<th>创建时间</th>
+		<th>更新时间</th>
+		<th>操作</th>
+	</tr>
+	<?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
+		<td><?php echo ($vo["id"]); ?></td>
+		<td><?php echo (mb_substr($vo["content"],0,10,utf8)); ?></td>
+		<td><?php echo ($vo["pic"]); ?></td>
+		<td><img src="/Public/uploads/<?php echo ($vo["pic"]); ?>" alt="" width="100px" height="100px"></td>
+		<td><?php echo (date('Y-m-d H:i:s',$vo["create_time"])); ?></td>
+		<td><?php echo (date('Y-m-d H:i:s',$vo["update_time"])); ?></td>
+		<td><a href="<?php echo U('admin/doing/update',array('id'=>$vo['id']));?>">修改</a>/<a href="<?php echo U('admin/doing/delete',array('id'=>$vo['id']));?>">删除</a></td>
+	</tr><?php endforeach; endif; ?>
+</table>
+<div class="page"><?php echo ($page); ?></div>
 </div>
-<!-- *********内容************* -->
     </div><!--/#content.col-md-0-->
 </div><!--/fluid-row-->
 <footer class="row">

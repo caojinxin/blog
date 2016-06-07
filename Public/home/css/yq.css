@@ -35,7 +35,7 @@ textarea {
 .fr {
 	float: right;
 }
-.conmwidth {
+div.conmwidth {
 	margin: 0 auto;
 	width: 100%;
 }
@@ -94,8 +94,15 @@ textarea {
 	font-family: Georgia;
 	text-align: center;
 }
-.sub:hover {
-	
+.show_bar {
+	opacity: 1;
+	margin-top: 0;
+	transition: all .1s ease-in;
+}
+.hide_bar {
+	opacity: 0;
+	margin-top: -15px;
+	transition: all .1s ease-in;
 }
 /*底部footer*/
 .footer {

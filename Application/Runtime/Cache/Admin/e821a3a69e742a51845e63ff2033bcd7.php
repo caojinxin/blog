@@ -131,17 +131,12 @@
                     <div class="nav-sm nav nav-stacked">
 
                     </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i class="glyphicon glyphicon-home"></i><span> 用户管理</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="<?php echo U('admin/image/index');?>"><i class="glyphicon glyphicon-eye-open"></i><span> 图片管理</span></a>
-                        </li>
+                    <ul class="nav nav-pills nav-stacked main-menu">              
                         <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i
                                     class="glyphicon glyphicon-edit"></i><span> Blogs</span></a></li>
                         <li><a class="ajax-link" href="<?php echo U('admin/categroy/index');?>"><i class="glyphicon glyphicon-list-alt"></i><span> Categroy</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/doing/index');?>"><i class="glyphicon glyphicon-font"></i><span> 碎言碎语</span></a>
                         </li>
                         <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Gallery</span></a>
                         </li>
@@ -203,7 +198,7 @@
 	    <label for="inputEmail3" class="col-sm-2 control-label">级别：</label>
 	    <div class="col-sm-10">
 	      <select name='parent_id' id='parent_id'>
-	      		<option value=‘'0'>顶级分类</option>
+	      		<option value='0'>顶级分类</option>
 	      	<?php if(is_array($list)): foreach($list as $k=>$vo): ?><option value='<?php echo ($vo["id"]); ?>'><?php echo ($vo["name"]); ?></option><?php endforeach; endif; ?>
 	      </select>
 	    </div>

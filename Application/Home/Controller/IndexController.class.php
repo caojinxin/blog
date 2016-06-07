@@ -10,7 +10,7 @@ class IndexController extends Controller {
     	$blog = M('Blog'); // 实例化User对象
     
     	$count = $blog->where($where)->count();// 查询满足要求的总记录数
-    	$Page = new \Think\Page($count,3);
+    	$Page = new \Think\Page($count,4);
     	//实例化分页类 传入总记录数和每页显示的记录数(2)
     	$Page->setConfig('prev','<<');
     	$Page->setConfig('next','>>');
@@ -27,8 +27,6 @@ class IndexController extends Controller {
     	$this->display();
     }
 }
-
-
 
 ?>
 

@@ -44,9 +44,58 @@ class StudyController extends Controller {
     }
     public function detail(){
         $id = I('get.id');
-        M('Blog')->where("categroy_id = $id")->setInc('read_num');
-        $list = M('Blog')->where("categroy_id = $id")->find();
-        $this->assign('list',$list);
+        M('Blog')->where("id = $id")->setInc('read_num');
+        $blog_list = M('Blog')->where("id = $id")->find();
+       
+        $categroy_id = $blog_list['categroy_id'];
+        //echo $categroy_id;die();
+        $where['categroy_id'] = $categroy_id;
+        $where['id'] = array('lt',$id);
+        $blog_list1 = M('Blog')->where($where)->order('id desc')->limit('1')->find();
+
+        $date['categroy_id'] = $categroy_id;
+        $date['id'] = array('gt',$id);
+        $blog_list2 = M('Blog')->where($date)->order('id asc')->limit('1')->find();
+       
+        //var_dump($blog_list2);die();
+        $categroy_id = $blog_list['categroy_id'];
+        $categroy_list = M('Categroy')->where("id = $categroy_id")->find();
+
+        $categroy_all = M('Categroy')->where('parent_id = 5')->select();
+        foreach($categroy_all as $v){
+            $categroy[$v['id']] = $v; //变成二维 的key 是 id的值
+        }
+        $blog_list3 = M('Blog')->where("categroy_id =  $categroy_id")->order('create_time asc')->select();
+        $blog_list4 = M('Blog')->where("categroy_id =  $categroy_id")->order('read_num asc')->select();
+
+        
+        $comment_list = M('Comment')->where("blog_id = $id")->select();
+        //var_dump($comment_list);die();
+        $comment_part = M('Comment')->where("blog_id = $id")->order('top desc')->limit('3')->select();
+        $this->assign('list8',$comment_list);
+        $this->assign('list9',$comment_part);
+        $num = M('Comment')->where("blog_id = $id")->count();
+
+        $this->assign('num',$num); 
+        $this->assign('list7',$categroy);
+        $this->assign('list',$blog_list);
+        $this->assign('list1',$categroy_list);
+        $this->assign('list2',$blog);
+        $this->assign('list3',$blog_list1);
+        $this->assign('list4',$blog_list2);
+        $this->assign('list5',$blog_list3);
+        $this->assign('list6',$blog_list4);
         $this->display();
     }
+    public function top(){
+        $num = $_POST['num'];
+        $blog_id = $_POST['id'];
+        $num++;
+        $arr = array('status'=>1,'top'=>$num);
+        $data['top'] = $num;
+        M('Comment')->data($data)->where("blog_id = $blog_id")->save();
+        echo json_encode($arr);
+    }
 }
+
+?>

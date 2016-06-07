@@ -144,7 +144,7 @@
                         </li>
                         <li><a class="ajax-link" href="<?php echo U('admin/doing/index');?>"><i class="glyphicon glyphicon-font"></i><span> 碎言碎语</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Gallery</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/about/update');?>"><i class="glyphicon glyphicon-picture"></i><span> About</span></a>
                         </li>
                         <li class="nav-header hidden-md">Sample Section</li>
                         <li><a class="ajax-link" href="table.html"><i
@@ -198,64 +198,64 @@
             </div>
 <!-- *********内容************* -->
 <div style="width:500px">
-    <form class="form-horizontal" action="<?php echo U('admin/blog/handleUpdate');?>" method="post"
-    enctype='multipart/form-data'>
+    <form class="form-horizontal" action="<?php echo U('admin/about/handleUpdate');?>" method="post">
 	  <div class="form-group">
-	    <label for="inputEmail3" class="col-sm-2 control-label">标题：</label>
+	    <label for="inputEmail3" class="col-sm-2 control-label">网名：</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputEmail3" placeholder="标题" name="title" value='<?php echo ($blog["title"]); ?>'>
+	      <input type="text" class="form-control" id="inputEmail3" placeholder="网名" name="wang">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">内容：</label>
+	    <label for="inputPassword3" class="col-sm-2 control-label">姓名：</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="内容" name="content" value='<?php echo ($blog["content"]); ?>'>
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="姓名" name="name">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
+	    <label for="inputPassword3" class="col-sm-2 control-label">籍贯：</label>
 	    <div class="col-sm-10">
-	     <img src='/Public/<?php echo ($blog["pic"]); ?>' alt='' width='150px' height='150px'>
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="籍贯" name="address">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
+	    <label for="inputPassword3" class="col-sm-2 control-label">现居：</label>
 	    <div class="col-sm-10">
-	      <input type="file" class="form-control" id="inputPassword3" placeholder="图片" name="pic">
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">作者：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="作者" name="author" value='<?php echo ($blog["author"]); ?>'>
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="现居" name="nowaddress">
 	    </div>
 	  </div>
 	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">浏览次数：</label>
+	    <label for="inputPassword3" class="col-sm-2 control-label">职业：</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="浏览次数" name="read_num" value='<?php echo ($blog["read_num"]); ?>'>
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="职业" name="work">
 	    </div>
 	  </div>
 	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">描述：</label>
+	    <label for="inputPassword3" class="col-sm-2 control-label">喜欢的书：</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="描述" name="description" value='<?php echo ($blog["description"]); ?>'>
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="喜欢的书" name="book">
 	    </div>
 	  </div>
 	   <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">分类id：</label>
+	    <label for="inputPassword3" class="col-sm-2 control-label">喜欢的音乐：</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="分类id" name="categroy_id" value='<?php echo ($blog["category_id"]); ?>'>
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="喜欢的音乐" name="music">
 	    </div>
 	  </div>
-	  <input type='hidden' name='id' value='<?php echo ($blog["id"]); ?>'>
+	  
+	  <script type="text/plain" name="content" id="myEditor" style="width:1000px;height:240px;">
+    		<p>这里我可以写一些输入提示</p>
+	  </script>
 	  <div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
-	      <button type="submit" class="btn btn-default">修改</button>
+	      <button type="submit" class="btn btn-default">提交</button>
 	    </div>
 	  </div>
 	</form>
 </div>
+<script type="text/javascript">
+	//实例化编辑器
+	var um = UM.getEditor('myEditor');
+</script>
 <!-- *********内容************* -->
     </div><!--/#content.col-md-0-->
 </div><!--/fluid-row-->

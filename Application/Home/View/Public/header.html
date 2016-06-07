@@ -3,16 +3,9 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="__PUBLIC__/home/css/yq.css">
-		<link rel="stylesheet" href="__PUBLIC__/home/css/zy.css">
-
-		
-		<link rel="stylesheet" href="__PUBLIC__/home/css/sui.css">
-		
-		<link rel="stylesheet" href="__PUBLIC__/home/css/xuewuzhijing.css">
-
+		<link rel="stylesheet" href="__PUBLIC__/home/css/com_css.css">		
 		<script src="__PUBLIC__/home/js/jquery2.1.4.min.js"></script>
-		<script src="__PUBLIC__/home/js/top.js"></script>
-		<script src="__PUBLIC__/home/js/sui.js"></script>	
+		<script src="__PUBLIC__/home/js/top_bur.js"></script>	
 		<title>主页</title>
 	</head>
 	<body>
@@ -41,7 +34,7 @@
 						<a <?php if(CONTROLLER_NAME=='Study'){echo 'class="color"';} ?> href="{:U('home/study/study')}"><span>学无止境</span><br><span class="sub">Learn</span></a>
 					</li>
 					<li>
-						<a <?php if(CONTROLLER_NAME=='Index'){echo 'class="color"';} ?> href=""><span>留言板</span><br><span class="sub">Guestbook</span></a>
+						<a <?php if(CONTROLLER_NAME=='Index'){echo 'class="color"';} ?> href="{:U('home/liuyan/liuyan')}"><span>留言板</span><br><span class="sub">Guestbook</span></a>
 					</li>
 				</ul>
 			</div>

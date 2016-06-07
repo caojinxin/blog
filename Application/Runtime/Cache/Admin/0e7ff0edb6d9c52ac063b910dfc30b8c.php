@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?> <!DOCTYPE html>
 <html lang="en">
 <head>
     <!--
@@ -43,6 +43,12 @@
 
     <!-- The fav icon -->
     <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <link href="/Public/vendor/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/Public/vendor/umeditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/Public/vendor/umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/Public/vendor/umeditor/umeditor.min.js"></script>
+    <script type="text/javascript" src="/Public/vendor/umeditor/lang/zh-cn/zh-cn.js"></script>
 
 </head>
 
@@ -131,19 +137,14 @@
                     <div class="nav-sm nav nav-stacked">
 
                     </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i class="glyphicon glyphicon-home"></i><span> 博客管理</span></a>
+                    <ul class="nav nav-pills nav-stacked main-menu">              
+                        <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i
+                                    class="glyphicon glyphicon-edit"></i><span> Blogs</span></a></li>
+                        <li><a class="ajax-link" href="<?php echo U('admin/categroy/index');?>"><i class="glyphicon glyphicon-list-alt"></i><span> Categroy</span></a>
                         </li>
-                        <li><a class="ajax-link" href="<?php echo U('admin/image/index');?>"><i class="glyphicon glyphicon-eye-open"></i><span> 图片管理</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/doing/index');?>"><i class="glyphicon glyphicon-font"></i><span> 碎言碎语</span></a>
                         </li>
-                        <li><a class="ajax-link" href="form.html"><i
-                                    class="glyphicon glyphicon-edit"></i><span> Forms</span></a></li>
-                        <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span> Charts</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Gallery</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/about/update');?>"><i class="glyphicon glyphicon-picture"></i><span> About</span></a>
                         </li>
                         <li class="nav-header hidden-md">Sample Section</li>
                         <li><a class="ajax-link" href="table.html"><i
@@ -159,7 +160,7 @@
                         </li>
                         <li><a class="ajax-link" href="grid.html"><i
                                     class="glyphicon glyphicon-th"></i><span> Grid</span></a></li>
-                        <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Tour</span></a></li>
+                        <li><a href="<?php echo U('admin/comment/index');?>"><i class="glyphicon glyphicon-globe"></i><span> Comment</span></a></li>
                         <li><a class="ajax-link" href="icon.html"><i
                                     class="glyphicon glyphicon-star"></i><span> Icons</span></a></li>
                         <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
@@ -205,12 +206,10 @@
 	      <input type="text" class="form-control" id="inputEmail3" placeholder="标题" name="title">
 	    </div>
 	  </div>
-	  <div class="form-group">
-	    <label for="inputPassword3" class="col-sm-2 control-label">内容：</label>
-	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="内容" name="content">
-	    </div>
-	  </div>
+	    <script type="text/plain" name="content" id="myEditor" style="width:1000px;height:240px;">
+    		<p>这里我可以写一些输入提示</p>
+	  </script>
+
 	  <div class="form-group">
 	    <label for="inputPassword3" class="col-sm-2 control-label">图片：</label>
 	    <div class="col-sm-10">
@@ -238,10 +237,13 @@
 	   <div class="form-group">
 	    <label for="inputPassword3" class="col-sm-2 control-label">分类id：</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="inputPassword3" placeholder="分类id" name="category_id">
+	      <input type="text" class="form-control" id="inputPassword3" placeholder="分类id" name="categroy_id">
 	    </div>
 	  </div>
-
+	  <script type="text/javascript">
+			//实例化编辑器
+			var um = UM.getEditor('myEditor');
+	  </script>
 	  <div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
 	      <button type="submit" class="btn btn-default">提交</button>

@@ -43,6 +43,12 @@
 
     <!-- The fav icon -->
     <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <link href="/Public/vendor/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/Public/vendor/umeditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/Public/vendor/umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/Public/vendor/umeditor/umeditor.min.js"></script>
+    <script type="text/javascript" src="/Public/vendor/umeditor/lang/zh-cn/zh-cn.js"></script>
 
 </head>
 
@@ -131,19 +137,14 @@
                     <div class="nav-sm nav nav-stacked">
 
                     </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i class="glyphicon glyphicon-home"></i><span> 用户管理</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="<?php echo U('admin/image/index');?>"><i class="glyphicon glyphicon-eye-open"></i><span> 图片管理</span></a>
-                        </li>
+                    <ul class="nav nav-pills nav-stacked main-menu">              
                         <li><a class="ajax-link" href="<?php echo U('admin/blog/index');?>"><i
                                     class="glyphicon glyphicon-edit"></i><span> Blogs</span></a></li>
                         <li><a class="ajax-link" href="<?php echo U('admin/categroy/index');?>"><i class="glyphicon glyphicon-list-alt"></i><span> Categroy</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/doing/index');?>"><i class="glyphicon glyphicon-font"></i><span> 碎言碎语</span></a>
                         </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span> Gallery</span></a>
+                        <li><a class="ajax-link" href="<?php echo U('admin/about/update');?>"><i class="glyphicon glyphicon-picture"></i><span> About</span></a>
                         </li>
                         <li class="nav-header hidden-md">Sample Section</li>
                         <li><a class="ajax-link" href="table.html"><i
@@ -159,7 +160,7 @@
                         </li>
                         <li><a class="ajax-link" href="grid.html"><i
                                     class="glyphicon glyphicon-th"></i><span> Grid</span></a></li>
-                        <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span> Tour</span></a></li>
+                        <li><a href="<?php echo U('admin/comment/index');?>"><i class="glyphicon glyphicon-globe"></i><span> Comment</span></a></li>
                         <li><a class="ajax-link" href="icon.html"><i
                                     class="glyphicon glyphicon-star"></i><span> Icons</span></a></li>
                         <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span> Error Page</span></a>
@@ -215,12 +216,12 @@
             <?php if(is_array($list)): foreach($list as $k=>$vo): ?><tr>
                     <td><?php echo ($vo["id"]); ?></td>
                     <td><?php echo ($vo["title"]); ?></td>
-                    <td><?php echo ($vo["content"]); ?></td>
+                    <td><?php echo (htmlspecialchars_decode($vo["content"])); ?></td>
                     <td><img src="/Public/<?php echo ($vo["pic"]); ?>" alt='' width='100px' height='40px'></td>
                     <td><?php echo ($vo["author"]); ?></td>
                     <td><?php echo ($vo["description"]); ?></td>
                     <td><?php echo ($vo["read_num"]); ?></td>
-                    <td><?php echo ($vo["category_id"]); ?></td>
+                    <td><?php echo ($vo["categroy_id"]); ?></td>
                     <td><?php echo (date('Y-m-d H:i:s',$vo["create_time"])); ?></td>
                     <td>
                         <a href="<?php echo U('admin/blog/update',array('id'=>$vo['id']));?>">更新</a>
